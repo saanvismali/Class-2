@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <form action="/getweather" method="POST">
+          Location
+            <input type="text" name="city"><br>
+            <button type="submit">Submit</button>
+        </form>
+
+        {% if data and data.country_code and data_temp %}
+            <h1>{{ data.location }}</h1>
+            <p> The country code is {{ data.country_code }}</p>
+            <p> The temperature is {{ data_temp }}</p>
+        {% else %}
+            <p>{{ error }}</p>
+        {% endif %}
+    </body>
+</html>
